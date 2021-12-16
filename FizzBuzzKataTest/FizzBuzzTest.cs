@@ -31,6 +31,15 @@ namespace FizzBuzzKataTest
         }
         
         [Fact]
+        public void Should_ShowFizz_When_ContainsThree()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(13));
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(31));
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(43));
+        }
+        
+        [Fact]
         public void Should_ShowBuzz_When_MultipleOfFive()
         {
             var fizzBuzz = new FizzBuzz();
@@ -58,5 +67,7 @@ namespace FizzBuzzKataTest
             Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.AnswerFor(101));
             Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.AnswerFor(500));
         }
+        
+        
     }
 }

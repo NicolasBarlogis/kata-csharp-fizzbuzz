@@ -10,11 +10,11 @@ namespace FizzBuzzKata
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if (number % 3 == 0 && number % 5 == 0)
+            if ((number % 3 == 0 || number.ToString().Contains(3.ToString()))&& number % 5 == 0)
             {
                 return "FizzBuzz";
             }
-            if (number % 3 == 0)
+            if (number % 3 == 0 || number.ToString().Contains(3.ToString()))
             {
                 return "Fizz";
             } 
