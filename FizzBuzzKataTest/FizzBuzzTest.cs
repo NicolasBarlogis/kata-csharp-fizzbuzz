@@ -49,5 +49,14 @@ namespace FizzBuzzKataTest
             Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(60));
             Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(90));
         }
+        
+        [Fact]
+        public void Should_NotWork_When_NumberIsOutOfRange()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.AnswerFor(0));
+            Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.AnswerFor(101));
+            Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.AnswerFor(500));
+        }
     }
 }
