@@ -10,20 +10,34 @@ namespace FizzBuzzKata
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ((number % 3 == 0 || number.ToString().Contains(3.ToString())) && 
-                (number % 5 == 0 || number.ToString().Contains(5.ToString())))
+            if (MatchRuleThree(number) && MatchRuleFive(number))
             {
                 return "FizzBuzz";
             }
-            if (number % 3 == 0 || number.ToString().Contains(3.ToString()))
+            if (MatchRuleThree(number))
             {
                 return "Fizz";
             } 
-            if (number % 5 == 0 || number.ToString().Contains(5.ToString()))
+            if (MatchRuleFive(number))
             {
                 return "Buzz";
             }
             return number.ToString();
+        }
+
+        private bool MatchRule(int number, int reference)
+        {
+            return number % reference == 0 || number.ToString().Contains(reference.ToString());
+        }
+
+        private bool MatchRuleThree(int number)
+        {
+            return MatchRule(number, 3);
+        }
+        
+        private bool MatchRuleFive(int number)
+        {
+            return MatchRule(number, 5);
         }
     }
 }
