@@ -50,6 +50,25 @@ namespace FizzBuzzKataTest
         }
         
         [Fact]
+        public void Should_ShowBuzz_When_ContainsFive()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Equal(Buzz,fizzBuzz.AnswerFor(52));
+            Assert.Equal(Buzz,fizzBuzz.AnswerFor(56));
+            Assert.Equal(Buzz,fizzBuzz.AnswerFor(59));
+        }
+        
+        [Fact]
+        public void Should_ShowBuzz_When_MultipleThreeOrContainsThreeANDMultipleFiveOrContainsFive()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(35));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(53));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(54));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(90));
+        }
+        
+        [Fact]
         public void Should_ShowFizzBuzz_When_MultipleOfThreeAndFive()
         {
             var fizzBuzz = new FizzBuzz();
