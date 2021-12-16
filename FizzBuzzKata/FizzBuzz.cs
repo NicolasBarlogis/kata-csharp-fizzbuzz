@@ -4,7 +4,7 @@
     {
         public string AnswerFor(int number)
         {
-            return number.ToString();
+            return number % 3 == 0 ? "fizz" : number.ToString();
         }
     }
 }

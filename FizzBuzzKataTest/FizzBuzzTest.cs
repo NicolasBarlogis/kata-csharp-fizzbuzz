@@ -5,6 +5,8 @@ namespace FizzBuzzKataTest
 {
     public class FizzBuzzTest
     {
+        private const string Fizz = "fizz";
+        
         [Fact]
         public void Should_ShowCorrectValue_When_NoRule()
         {
@@ -13,6 +15,16 @@ namespace FizzBuzzKataTest
             Assert.Equal("2",fizzBuzz.AnswerFor(2));
             Assert.Equal("7",fizzBuzz.AnswerFor(7));
             Assert.Equal("11",fizzBuzz.AnswerFor(11));
+        }
+        
+        [Fact]
+        public void Should_ShowCorrectValue_When_MultipleOfThree()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(3));
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(6));
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(12));
+            Assert.Equal(Fizz,fizzBuzz.AnswerFor(18));
         }
     }
 }
