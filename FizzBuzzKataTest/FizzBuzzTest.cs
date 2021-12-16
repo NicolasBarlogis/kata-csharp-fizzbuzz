@@ -1,3 +1,4 @@
+using System;
 using FizzBuzzKata;
 using Xunit;
 
@@ -7,9 +8,10 @@ namespace FizzBuzzKataTest
     {
         private const string Fizz = "Fizz";
         private const string Buzz = "Buzz";
+        private const string FizzBuzz = "FizzBuzz";
         
         [Fact]
-        public void Should_ShowCorrectValue_When_NoRule()
+        public void Should_ShowNumber_When_NoRule()
         {
             var fizzBuzz = new FizzBuzz();
             Assert.Equal("1",fizzBuzz.AnswerFor(1));
@@ -19,7 +21,7 @@ namespace FizzBuzzKataTest
         }
         
         [Fact]
-        public void Should_ShowCorrectValue_When_MultipleOfThree()
+        public void Should_ShowFizz_When_MultipleOfThree()
         {
             var fizzBuzz = new FizzBuzz();
             Assert.Equal(Fizz,fizzBuzz.AnswerFor(3));
@@ -29,13 +31,23 @@ namespace FizzBuzzKataTest
         }
         
         [Fact]
-        public void Should_ShowCorrectValue_When_MultipleOfFive()
+        public void Should_ShowBuzz_When_MultipleOfFive()
         {
             var fizzBuzz = new FizzBuzz();
             Assert.Equal(Buzz,fizzBuzz.AnswerFor(5));
             Assert.Equal(Buzz,fizzBuzz.AnswerFor(10));
             Assert.Equal(Buzz,fizzBuzz.AnswerFor(50));
             Assert.Equal(Buzz,fizzBuzz.AnswerFor(65));
+        }
+        
+        [Fact]
+        public void Should_ShowFizzBuzz_When_MultipleOfThreeAndFive()
+        {
+            var fizzBuzz = new FizzBuzz();
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(15));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(30));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(60));
+            Assert.Equal(FizzBuzz,fizzBuzz.AnswerFor(90));
         }
     }
 }
