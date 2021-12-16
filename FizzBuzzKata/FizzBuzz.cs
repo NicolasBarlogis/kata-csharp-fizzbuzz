@@ -1,10 +1,23 @@
-﻿namespace FizzBuzzKata
+﻿using System;
+
+namespace FizzBuzzKata
 {
     public class FizzBuzz
     {
         public string AnswerFor(int number)
         {
-            return number % 3 == 0 ? "fizz" : number.ToString();
+            if (number % 3 == 0)
+            {
+                return "Fizz";
+            } 
+            else if (number % 5 == 0)
+            {
+                return "Buzz";
+            }
+            else
+            {
+                return number.ToString();
+            }
         }
     }
 }
